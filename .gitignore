@@ -1,0 +1,9 @@
+.gradle
+.idea/*
+app/build
+build
+chuckIOS/chuck.xcodeproj/project.xcworkspace/xcuserdata
+chuckIOS/chuck.xcworkspace/xcuserdata
+chuckIOS/Pods/Pods.xcodeproj/xcuserdata
+local.properties
+*.iml
