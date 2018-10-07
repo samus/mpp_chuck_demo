@@ -15,6 +15,7 @@ pluginManagement {
         maven { url 'https://plugins.gradle.org/m2/' }
     }
 }
+enableFeaturePreview('GRADLE_METADATA')
 rootProject.name = 'MPPChuck'
 
 include ':app'
