@@ -9,7 +9,7 @@ import kotlin.test.assertTrue
 class TestJokeApiClient {
     @Test
     fun `Can retrieve a random joke`() = runBlocking<Unit> {
-        val client = JokeApiClient()
+        val client = JokeApiClient(GlobalScope.coroutineContext)
         val result = client.random()
         assertEquals("success", result.type)
         assertTrue(result.jokes.isNotEmpty(), "Should have returned a joke")
