@@ -19,3 +19,4 @@ enableFeaturePreview('GRADLE_METADATA')
 rootProject.name = 'MPPChuck'
 
 include ':app'
+include ':android'
