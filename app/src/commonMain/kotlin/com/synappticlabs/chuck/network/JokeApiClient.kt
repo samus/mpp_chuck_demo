@@ -48,15 +48,14 @@ class JokeApiClient(private val uiContext: CoroutineContext,
     }
 
     suspend fun random(count: Int = 1, exclusions: JokeExclusions = JokeExclusions.None): JokesMessage = client.get {
-        url{
+        url {
             takeFrom(baseURL)
             encodedPath = "jokes/random/${count}"
-            parameter("escape", "javascript")
-            exclusions.exclude?.let { exclusion -> parameter("exclude", exclusion) }
         }
+        parameter("escape", "javascript")
+        exclusions.exclude?.let { exclusion -> parameter("exclude", exclusion) }
         accept(ContentType.Application.Json.withCharset(Charsets.UTF_8))
     }
-
 }
 
 fun HttpClientCall.debugInfo(): String {
