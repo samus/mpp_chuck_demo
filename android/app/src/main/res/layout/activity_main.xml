@@ -23,7 +23,7 @@
             android:textColor="@color/textColor"
             android:gravity="center_horizontal"
             tools:text="There used to be a Febuary 30th but Chuck Norris gave it a round house kick to the face."
-            android:textSize="18sp"/>
+            android:textSize="24sp"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
