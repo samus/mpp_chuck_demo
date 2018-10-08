@@ -1,6 +1,6 @@
 # MPP Chuck Norris
 
-Chuck Norris can make any phone run the same app but there is only one Chuck.  For the rest of us there's Kotlin. Through the usage of several Kotlin projects it is possible to share a large percentage of code between iOS and Android apps. This is a demo app that utilizes Kotlin Multiplatform, Kotlin Serialization, Kotlin Coroutines and KTor-Client to access a backend api and display the results.
+Chuck Norris can make any phone run the same app but there is only one Chuck.  For the rest of us there's Kotlin. Through the usage of several Kotlin projects it is possible to share a large percentage of code between iOS and Android apps. This is a demo app that utilizes [Kotlin Multiplatform](https://kotlinlang.org/docs/reference/multiplatform.html), [Kotlin Serialization](https://github.com/Kotlin/kotlinx.serialization), [Kotlin Coroutines](https://github.com/Kotlin/kotlinx.coroutines) and [KTor-Client](https://ktor.io/clients/index.html) to access a backend [api](http://www.icndb.com/api/) and display the results.
 
 ![Side by side](https://raw.githubusercontent.com/samus/mpp_chuck_demo/master/screens/sidebyside.png)
 
