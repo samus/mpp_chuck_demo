@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		094D817C216AF52E003AE765 /* JokeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D817B216AF52E003AE765 /* JokeViewModel.swift */; };
+		094D817E216AF579003AE765 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D817D216AF579003AE765 /* UI.swift */; };
+		094D8180216AF82E003AE765 /* JokeApiClient+rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094D817F216AF82E003AE765 /* JokeApiClient+rx.swift */; };
 		8307A018585D9E9435003DD2 /* Pods_Chuck.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41A9DC7A5762F05C0077D52E /* Pods_Chuck.framework */; };
 		F861D7E1207FA40F0085E80D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861D7E0207FA40F0085E80D /* AppDelegate.swift */; };
-		F861D7E3207FA40F0085E80D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861D7E2207FA40F0085E80D /* ViewController.swift */; };
+		F861D7E3207FA40F0085E80D /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861D7E2207FA40F0085E80D /* JokeViewController.swift */; };
 		F861D7E6207FA40F0085E80D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F861D7E4207FA40F0085E80D /* Main.storyboard */; };
 		F861D7EB207FA4100085E80D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F861D7E9207FA4100085E80D /* LaunchScreen.storyboard */; };
 		F861D7F6207FA4100085E80D /* iosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F861D7F5207FA4100085E80D /* iosAppTests.swift */; };
@@ -49,12 +52,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		094D817B216AF52E003AE765 /* JokeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewModel.swift; sourceTree = "<group>"; };
+		094D817D216AF579003AE765 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
+		094D817F216AF82E003AE765 /* JokeApiClient+rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JokeApiClient+rx.swift"; sourceTree = "<group>"; };
 		3DE02A124D8B48B9145AED7B /* Pods-Chuck.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chuck.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chuck/Pods-Chuck.release.xcconfig"; sourceTree = "<group>"; };
 		41A9DC7A5762F05C0077D52E /* Pods_Chuck.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chuck.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BEC88387EFE59E36E62DC12 /* Pods-Chuck.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chuck.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chuck/Pods-Chuck.debug.xcconfig"; sourceTree = "<group>"; };
 		F861D7DD207FA40F0085E80D /* Chuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F861D7E0207FA40F0085E80D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F861D7E2207FA40F0085E80D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F861D7E2207FA40F0085E80D /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
 		F861D7E5207FA40F0085E80D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F861D7EA207FA4100085E80D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F861D7EC207FA4100085E80D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,10 +141,13 @@
 			isa = PBXGroup;
 			children = (
 				F861D7E0207FA40F0085E80D /* AppDelegate.swift */,
-				F861D7E2207FA40F0085E80D /* ViewController.swift */,
-				F861D7E4207FA40F0085E80D /* Main.storyboard */,
-				F861D7E9207FA4100085E80D /* LaunchScreen.storyboard */,
 				F861D7EC207FA4100085E80D /* Info.plist */,
+				F861D7E2207FA40F0085E80D /* JokeViewController.swift */,
+				094D817B216AF52E003AE765 /* JokeViewModel.swift */,
+				F861D7E9207FA4100085E80D /* LaunchScreen.storyboard */,
+				F861D7E4207FA40F0085E80D /* Main.storyboard */,
+				094D817D216AF579003AE765 /* UI.swift */,
+				094D817F216AF82E003AE765 /* JokeApiClient+rx.swift */,
 			);
 			path = chuckApp;
 			sourceTree = "<group>";
@@ -329,7 +338,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F861D7E3207FA40F0085E80D /* ViewController.swift in Sources */,
+				F861D7E3207FA40F0085E80D /* JokeViewController.swift in Sources */,
+				094D8180216AF82E003AE765 /* JokeApiClient+rx.swift in Sources */,
+				094D817E216AF579003AE765 /* UI.swift in Sources */,
+				094D817C216AF52E003AE765 /* JokeViewModel.swift in Sources */,
 				F861D7E1207FA40F0085E80D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -509,7 +521,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-v";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.synappticlabs.mppchuck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -531,7 +543,7 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_LDFLAGS = "-v";
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.iosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.synappticlabs.mppchuck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
