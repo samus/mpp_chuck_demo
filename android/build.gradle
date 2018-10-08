@@ -1,63 +1,23 @@
 buildscript {
-    dependencies {
-        classpath "com.android.tools.build:gradle:$gradle_android_version"
-    }
     repositories {
+        maven { url "http://kotlin.bintray.com/kotlin-dev" }
+        jcenter()
         google()
     }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$gradle_android_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
-
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlinx-serialization'
-apply plugin: 'kotlin-kapt'
-
-android {
-    compileSdkVersion 28
-    defaultConfig {
-        applicationId 'com.synappticlabs.chuck'
-        minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 1
-        versionName '1.0'
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+allprojects {
+    repositories {
+        google()
+        jcenter()
     }
-    buildTypes {
-        debug {}
-        release {
-            minifyEnabled false
-        }
-    }
-
-    packagingOptions {
-        exclude 'META-INF/app.kotlin_module'
-    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation "androidx.test:runner:$androidx_version"
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
-
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.2'
-    implementation 'androidx.constraintlayout:constraintlayout-solver:1.1.2'
-    implementation "androidx.appcompat:appcompat:$androidx_version"
-    implementation "androidx.core:core:$androidx_version"
-    implementation "androidx.core:core-ktx:$androidx_version"
-
-    def lifecycle_version = "2.0.0"
-    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
-    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
-
-    implementation "com.google.android.material:material:$androidx_version"
-
-    implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serialization_version"
-    implementation "io.ktor:ktor-client-okhttp:$ktor_version"
-    implementation "io.ktor:ktor-client-json-jvm:$ktor_version"
-    implementation "io.ktor:ktor-client-android:$ktor_version"
-
-//    implementation project(':app:android')
-
 }
