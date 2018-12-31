@@ -7,8 +7,13 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 28
 
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -22,6 +27,13 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*.kotlin_module'
+        exclude 'META-INF/io.netty.versions.properties'
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/DEPENDENCIES'
     }
 
 }
@@ -41,7 +53,7 @@ kotlin {
         // Switch here to build for different devices.
         // presets.iosArm64 (or iosArm32) to build library for iPhone device
         // presets.iosX64 for the simulator.
-        fromPreset(presets.iosX64, 'ios') {
+        fromPreset(presets.iosArm64, 'ios') {
             compilations.main.outputKinds('FRAMEWORK')
         }
 
@@ -55,9 +67,8 @@ kotlin {
                 implementation 'org.jetbrains.kotlin:kotlin-stdlib-common'
                 implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutines_version"
                 implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serialization_version"
-
                 implementation "io.ktor:ktor-client-core:$ktor_version"
-                implementation "io.ktor:ktor-client-json:$ktor_version"                
+                implementation "io.ktor:ktor-client-json:$ktor_version"
             }
         }
         commonTest {
@@ -105,8 +116,8 @@ kotlin {
                 implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serialization_version"
 
                 implementation "io.ktor:ktor-client-ios:$ktor_version"
-                implementation "io.ktor:ktor-client-core-ios:$ktor_version"
-                implementation "io.ktor:ktor-client-json-ios:$ktor_version"
+                implementation "io.ktor:ktor-client-core-native:$ktor_version"
+                implementation "io.ktor:ktor-client-json-native:$ktor_version"
             }
         }
         iosTest {

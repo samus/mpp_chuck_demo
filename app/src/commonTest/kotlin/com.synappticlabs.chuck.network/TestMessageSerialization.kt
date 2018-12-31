@@ -1,11 +1,15 @@
 package com.synappticlabs.chuck.network
 
 import com.synappticlabs.chuck.models.Joke
+import kotlinx.serialization.ImplicitReflectionSerializer
 import kotlinx.serialization.json.JSON
+import kotlinx.serialization.parse
+import kotlinx.serialization.stringify
 import kotlin.test.*
 
 
 class TestMessageSerialization {
+    @UseExperimental(ImplicitReflectionSerializer::class)
     @Test
     fun `parses a joke`() {
         val joke = Joke(5, "chuck")
@@ -14,6 +18,7 @@ class TestMessageSerialization {
         assertEquals(joke, JSON.parse<Joke>(text))
     }
 
+    @UseExperimental(ImplicitReflectionSerializer::class)
     @Test
     fun `parses a single joke message`() {
         val msg = JokeMessage("success", Joke(5, "chuck"))
@@ -22,6 +27,7 @@ class TestMessageSerialization {
         assertEquals(msg, JSON.parse<JokeMessage>(text))
     }
 
+    @UseExperimental(ImplicitReflectionSerializer::class)
     @Test
     fun `parses a multi-joke message`() {
         val msg = JokesMessage(type = "success", jokes = listOf(Joke(1, "chuck1"), Joke(2, "chuck2")))

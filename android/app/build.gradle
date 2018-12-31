@@ -15,9 +15,13 @@ apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
     defaultConfig {
         applicationId 'com.synappticlabs.chuck'
-        minSdkVersion 15
+        minSdkVersion 24
         targetSdkVersion 28
         multiDexEnabled true
         versionCode 1
@@ -33,7 +37,7 @@ android {
     }
 
     packagingOptions {
-        exclude 'META-INF/app.kotlin_module'
+        exclude 'META-INF/*.kotlin_module'
         exclude 'META-INF/DEPENDENCIES'
     }
 }

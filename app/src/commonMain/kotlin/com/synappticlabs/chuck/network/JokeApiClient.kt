@@ -3,17 +3,16 @@ package com.synappticlabs.chuck.network
 import com.synappticlabs.chuck.models.Joke
 import io.ktor.client.HttpClient
 import io.ktor.client.call.HttpClientCall
-import io.ktor.client.call.ReceivePipelineFail
-import io.ktor.client.call.call
 import io.ktor.client.features.json.JsonFeature
 import io.ktor.client.features.json.serializer.KotlinxSerializer
-import io.ktor.client.request.*
-import io.ktor.client.response.readText
-import io.ktor.http.*
-import kotlinx.coroutines.CompletionHandler
+import io.ktor.client.request.accept
+import io.ktor.client.request.get
+import io.ktor.client.request.parameter
+import io.ktor.http.ContentType
+import io.ktor.http.takeFrom
+import io.ktor.http.withCharset
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import kotlinx.io.charsets.Charset
 import kotlinx.io.charsets.Charsets
 import kotlinx.serialization.Optional
 import kotlinx.serialization.SerialName
@@ -29,7 +28,7 @@ class JokeApiClient(private val uiContext: CoroutineContext,
 
     val client = HttpClient{
         install(JsonFeature) {
-            serializer = ChuckSerializer().apply {
+            serializer = KotlinxSerializer().apply {
                 setMapper(JokesMessage::class, JokesMessage.serializer())
                 setMapper(JokeMessage::class, JokeMessage.serializer())
             }

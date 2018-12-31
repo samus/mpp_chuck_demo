@@ -8,5 +8,6 @@ target 'Chuck' do
   # Pods for Chuck
   pod 'RxSwift',    '~> 4.0'
   pod 'RxCocoa',    '~> 4.0'
+  pod 'RxAtomic',   '~> 4.0'
 
 end
